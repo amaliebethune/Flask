@@ -13,9 +13,9 @@
 
 <p> Click on a crystal to learn more about it!</p>
 <ul>
-  <li><a href="crystal/1">Rose Quartz</a></li>
-  <li><a href="crystal/2">Aventurine</a></li>
-  <li><a href="crystal/3">Labradorite</a></li>
+{% for pair in pairs%}
+  <li><a href="{{ url_for('crystal', num=pair[0])}}">{{ pair[1] }}</a></li>
+ {% endfor %}
 
 </ul>
   </div>

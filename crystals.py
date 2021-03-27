@@ -27,12 +27,13 @@ crystal_list = convert_to_dict('crystals.csv')
 
 
 
-
-
+pairs_list= []
+for crys in crystal_list:
+    pairs_list.append( (crys['Number'], crys['Crystal']) )
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', pairs=pairs_list)
 
 @app.route('/crystal/<num>')
 def crystal(num):
